@@ -83,6 +83,7 @@ class ClientApp(FlaskView):
         dataObj={}
         dataObj["enable system"] = enable
         jsondata = json.dumps(dataObj)
+        self. _init_mqtt()
         self.mqttc.publish(mqtt_topic, jsondata)
         print ("Controller: ", enable)
 
