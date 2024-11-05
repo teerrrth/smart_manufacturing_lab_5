@@ -72,7 +72,6 @@ class ClientApp(FlaskView):
 
     def _init_db_client(self):
         self.db_client = pg.connect(self.db_host_address,sslmode="require")
-        #self.db_client = pg.connect(self.db_host_address)
         try:
             self.db_cursor = self.db_client.cursor()
             print("Connection Established")
