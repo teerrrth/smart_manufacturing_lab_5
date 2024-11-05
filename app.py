@@ -71,8 +71,8 @@ class ClientApp(FlaskView):
             print("Error in MQTT Client Initialization: ", e)
 
     def _init_db_client(self):
-        #self.db_client = pg.connect(self.db_host_address,sslmode="require")
-        self.db_client = pg.connect(self.db_host_address)
+        self.db_client = pg.connect(self.db_host_address,sslmode="require")
+        #self.db_client = pg.connect(self.db_host_address)
         try:
             self.db_cursor = self.db_client.cursor()
             print("Connection Established")
